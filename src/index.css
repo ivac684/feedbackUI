@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+body{
+    background-color: #31315f;
+}
+.header{
+    background-color: #131524;
+    color: #de6993;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.card{
+    display: inline-block;
+    align-self: center;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    width: 90%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.num-display{
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    align-content: center;
+    width: 40px;
+    height: 40px;
+    background-color:#de6993;
+    color: white;
+    position: relative;
+    bottom: 45px;
+    right :30px;
+    border-style: dotted;
+    border-color: white;
+
+}
+
+.text-display{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.edit{
+    display: inline;
+    width: 2rem;
+    float: right;
+    position: relative;
+    color: rgb(113, 139, 53);
+}
+
+.delete {
+    display: inline;
+    width: 2rem;
+    float: right;
+    position: relative;
+    color: rgb(145, 0, 0);
+}
+
+h2{
+    text-align: center;
+    font-size: 26px;
+}
+
+.input-group{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input{
+    border-radius: 8px;
+    padding: 10px;
+    width: 70%;
+}
+
+#send-button{
+    margin-left: -60px;
+    height: 20px;
+    align-self: center;
+    border-radius: 6px;
+
+}
+
+.feedback-stats{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin: 0 70px 0 70px;
+}
+
+.rating{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    gap: 8px;
+    cursor: pointer;
+}
+
+input[type="radio"]{
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.button-style{
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.button-style:hover{
+    background-color: #ee98b7;
+}
+.button-style.selected{
+    background-color: #de6993;
+    color: white;
+}
+
+ul {
+    padding: 0;
+}
+label{
+    cursor: pointer;
+}
+
+.length-msg{
+    display: flex;
+    justify-content: center;
+    color: rgb(42, 69, 160);
+}
+
+i{
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+}
