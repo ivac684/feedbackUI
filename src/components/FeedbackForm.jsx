@@ -11,45 +11,48 @@ function FeedbackForm() {
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
 
-  const { addFeedback, feedbackEdit, updateFeedback } = useContext(FeedbackContext);
+  const { addFeedback, feedbackEdit, updateFeedback } =
+    useContext(FeedbackContext);
 
   useEffect(() => {
-    if(feedbackEdit.edit === true){
-      setBtnDisabled(false)
-      setText(feedbackEdit.item.text)
-      setRating(feedbackEdit.item.rating)
+    if (feedbackEdit.edit === true) {
+      setText(feedbackEdit.item.text);
+      setRating(feedbackEdit.item.rating);
     }
-  }, [feedbackEdit, rating])
+  }, [feedbackEdit]);
+
+  useEffect(() => {
+    if (text === "" || (text.trim().length <= 10) || !rating) {
+      setBtnDisabled(true);
+      if (text !== "" && text.trim().length <= 10) {
+        setMessage("Text must be at least 10 characters");
+      } else {
+        setMessage(null);
+      }
+    } else {
+      setBtnDisabled(false);
+      setMessage(null);
+    }
+  }, [text, rating]);
 
   const handleTextChange = (e) => {
-    if (text === "" || rating === null) {
-      setBtnDisabled(true);
-      setMessage(null);
-    } else if (text !== "" && text.trim().length <= 10) {
-      setMessage("Text must be at least 10 characters");
-      setBtnDisabled(true);
-    } else {
-      setMessage(null);
-      setBtnDisabled(false);
-    }
     setText(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim().length > 10 || rating !== null) {
+    if (text.trim().length > 10) {
       const newFeedback = {
         text,
         rating,
       };
-      if(feedbackEdit.edit === true){
-        updateFeedback(feedbackEdit.item.id, newFeedback)
-      }
-      else{
+      if (feedbackEdit.edit === true) {
+        updateFeedback(feedbackEdit.item.id, newFeedback);
+      } else {
         addFeedback(newFeedback);
       }
-      console.log("aaaaaaaaaaaaa", newFeedback)
       setText("");
+      setRating(null); 
     }
   };
 
@@ -64,8 +67,7 @@ function FeedbackForm() {
             onChange={handleTextChange}
             placeholder="Write a review"
           />
-          <Button type="submit" isDisabled={btnDisabled}>
-          </Button>
+          <Button type="submit" isDisabled={btnDisabled}></Button>
         </div>
         <div className="length-msg">{message}</div>
       </form>
