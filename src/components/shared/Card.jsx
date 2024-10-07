@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Card as CardPrime } from 'primereact/card';
 
 function Card({children}) {
   return (
-    <div className='card'>
+    <CardPrime className='card'>
       {children}
-    </div>
+    </CardPrime>
   )
 }
 

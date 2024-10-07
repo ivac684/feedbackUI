@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types'
+import { Button as StyledButton} from 'primereact/button';
+import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 function Button({ children, type, isDisabled }) {
   return (
-    <button type={type} disabled={isDisabled} id="send-button">
+    <StyledButton severity='success' label='Send' size='small' type={type} disabled={isDisabled} text>
       { children }
-    </button>
+    </StyledButton>
   )
 }
 
@@ -19,4 +21,4 @@ Button.propTypes = {
     isDisabled: PropTypes.bool
 }
 
-export default Button
+export default Button;

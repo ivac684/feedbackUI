@@ -64,7 +64,6 @@ function FeedbackForm() {
             placeholder="Write a review"
           />
           <Button type="submit" isDisabled={btnDisabled}>
-            Send
           </Button>
         </div>
         <div className="length-msg">{message}</div>

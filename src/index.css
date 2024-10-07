@@ -1,55 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
-body{
+body {
     background-color: #31315f;
 }
-.header{
+
+.header {
     background-color: #131524;
     color: #de6993;
     padding: 10px;
     font-weight: bold;
     text-align: center;
 }
-.card{
+
+.card {
     display: inline-block;
     align-self: center;
     margin-top: 20px;
     background-color: white;
     border-radius: 15px;
-    padding: 15px;
-    width: 90%;
+    width: 80%;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.num-display{
+
+.num-display {
     border-radius: 50%;
     text-align: center;
     font-weight: bold;
     align-content: center;
-    width: 40px;
-    height: 40px;
-    background-color:#de6993;
+    width: 50px;
+    height: 50px;
+    background-color: #de6993;
     color: white;
     position: relative;
-    bottom: 45px;
-    right :30px;
+    bottom: 50px;
+    right: 35px;
     border-style: dotted;
     border-color: white;
-
 }
 
-.text-display{
+.text-display {
     text-align: center;
     margin-bottom: 50px;
 }
 
-.edit{
+.edit {
     display: inline;
-    width: 2rem;
     float: right;
     position: relative;
     color: rgb(113, 139, 53);
@@ -57,31 +57,30 @@ body{
 
 .delete {
     display: inline;
-    width: 2rem;
     float: right;
     position: relative;
     color: rgb(145, 0, 0);
 }
 
-h2{
+h2 {
     text-align: center;
     font-size: 26px;
 }
 
-.input-group{
+.input-group {
     text-align: center;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-input{
+input {
     border-radius: 8px;
     padding: 10px;
     width: 70%;
 }
 
-#send-button{
+#send-button {
     margin-left: -60px;
     height: 20px;
     align-self: center;
@@ -89,28 +88,29 @@ input{
 
 }
 
-.feedback-stats{
+.feedback-stats {
     display: flex;
     justify-content: space-between;
     color: white;
-    margin: 0 70px 0 70px;
+    margin: 0 200px 0 200px;
 }
 
-.rating{
+.rating {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
     gap: 8px;
     cursor: pointer;
+    font-variant-numeric: tabular-nums;
 }
 
-input[type="radio"]{
+input[type="radio"] {
     visibility: hidden;
     cursor: pointer;
 }
 
-.button-style{
+.button-style {
     background-color: #f4f4f4;
     border-radius: 50%;
     width: 50px;
@@ -120,10 +120,12 @@ input[type="radio"]{
     font-weight: 600;
     cursor: pointer;
 }
-.button-style:hover{
+
+.button-style:hover {
     background-color: #ee98b7;
 }
-.button-style.selected{
+
+.button-style.selected {
     background-color: #de6993;
     color: white;
 }
@@ -131,17 +133,18 @@ input[type="radio"]{
 ul {
     padding: 0;
 }
-label{
+
+label {
     cursor: pointer;
 }
 
-.length-msg{
+.length-msg {
     display: flex;
     justify-content: center;
     color: rgb(42, 69, 160);
 }
 
-i{
+i {
     cursor: pointer;
     position: relative;
     margin-left: 20px;
