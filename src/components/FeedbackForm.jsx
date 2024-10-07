@@ -7,7 +7,7 @@ import FeedbackContext from "../context/FeedbackContext";
 
 function FeedbackForm() {
   const [text, setText] = useState("");
-  const [rating, setRating] = useState(10);
+  const [rating, setRating] = useState();
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
 
@@ -19,10 +19,10 @@ function FeedbackForm() {
       setText(feedbackEdit.item.text)
       setRating(feedbackEdit.item.rating)
     }
-  }, [feedbackEdit])
+  }, [feedbackEdit, rating])
 
   const handleTextChange = (e) => {
-    if (text === "") {
+    if (text === "" || rating === null) {
       setBtnDisabled(true);
       setMessage(null);
     } else if (text !== "" && text.trim().length <= 10) {
@@ -37,7 +37,7 @@ function FeedbackForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim().length > 10) {
+    if (text.trim().length > 10 || rating !== null) {
       const newFeedback = {
         text,
         rating,
@@ -48,6 +48,7 @@ function FeedbackForm() {
       else{
         addFeedback(newFeedback);
       }
+      console.log("aaaaaaaaaaaaa", newFeedback)
       setText("");
     }
   };
