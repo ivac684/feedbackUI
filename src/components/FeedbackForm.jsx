@@ -1,9 +1,9 @@
 import { useContext, useState, useEffect } from "react";
 import RatingSelect from "./RatingSelect";
-import Card from "./shared/Card";
 import Button from "./shared/Button";
 import { InputText } from "primereact/inputtext";
 import FeedbackContext from "../context/FeedbackContext";
+import {Card} from "primereact/card";
 
 function FeedbackForm() {
   const [text, setText] = useState("");
@@ -57,7 +57,7 @@ function FeedbackForm() {
   };
 
   return (
-    <Card>
+    <Card className="card">
       <form onSubmit={handleSubmit}>
         <h2>How would you rate your service with us?</h2>
         <RatingSelect select={(rating) => setRating(rating)} />
